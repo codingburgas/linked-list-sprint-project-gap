@@ -14,7 +14,7 @@ int main()
         Register();
     }
     else if (key == 'l' || key == 'L') {
-
+        Login();
     }
     else {
         cout << "\nInvalid key. Try again!\n";

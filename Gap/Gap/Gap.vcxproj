@@ -128,9 +128,11 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="src\Gap.cpp" />
+    <ClCompile Include="src\login.cpp" />
     <ClCompile Include="src\register.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="include\login.h" />
     <ClInclude Include="include\pch.h" />
     <ClInclude Include="include\register.h" />
   </ItemGroup>

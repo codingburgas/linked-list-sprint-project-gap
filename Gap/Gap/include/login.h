@@ -1,4 +1,3 @@
 #pragma once
-
 #include "pch.h"
-void Register();
+void Login();
