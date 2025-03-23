@@ -1,4 +1,5 @@
 #include <iostream>
+#include <conio.h>
 #include "../include/pch.h"
 using namespace std;
 
@@ -48,16 +49,23 @@ int main()
     std::cout << endl;
     std::cout << "App for history enthusiasts!\n";
 
-    //Log in and Register logic
-    char key = _getch();
+    //Log in and Register structures
+    char key;
+    std::cout << "Type 'L' to Log in and 'R' to Register: ";
+    while (true) {
+        key = _getch();
+        if (key == 'r' || key == 'R') {
+            Register();
+            break;
+        }
+        else if (key == 'l' || key == 'L') {
+            std::cout << "\nLog in is in progress!";
+            break;
+        }
+        else {
+            std::cout << "\nInvalid key. Try again!";
+        }
+    }
 
-    std::cout << "Type 'L' for log in and 'R' for register:";
-    if (key == 'r' || key == 'R') {
-        Register();
-    }
-    else if (key == 'l' || key == 'L') {
-    }
-    else {
-        std::cout << "\nInvalid key. Try again!\n";
-    }
+    return 0;
 }
