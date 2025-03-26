@@ -1,4 +1,5 @@
 #include "../Gap/include/pch.h"
+
 void insertRecord(std::string name, std::string lastName, std::string email, std::string password) {
     std::ifstream inFile("../../Gap/Data/accounts.json");
     ordered_json data;
