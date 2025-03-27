@@ -140,12 +140,12 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="DAL.h" />
-    <ClInclude Include="framework.h" />
-    <ClInclude Include="pch.h" />
+    <ClCompile Include="src\DAL.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="DAL.cpp" />
+    <ClInclude Include="include\DAL.h" />
+    <ClInclude Include="include\framework.h" />
+    <ClInclude Include="include\pch.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

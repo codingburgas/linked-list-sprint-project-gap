@@ -1,4 +1,4 @@
-#include "./include/pch.h"
+#include "../include/pch.h"
 using namespace std;
 
 void Register() {

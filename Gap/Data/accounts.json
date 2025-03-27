@@ -10,5 +10,11 @@
         "lastName": "hristova",
         "email": "pkhristova22@codingburgas.bg",
         "password": "Perla08090809@"
+    },
+    "3": {
+        "name": "Alex",
+        "lastName": "Georgiev",
+        "email": "ag22@gmail.com",
+        "password": "Wat71337!"
     }
 }
