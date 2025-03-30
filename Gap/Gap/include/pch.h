@@ -9,6 +9,7 @@
 #include <fstream>
 #include "json.hpp"
 #include "menu.h"
+#include "login.h"
 
 #ifdef OSisWindows
     #include <conio.h>

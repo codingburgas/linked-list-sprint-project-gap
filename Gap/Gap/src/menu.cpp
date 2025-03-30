@@ -48,7 +48,7 @@ void menu()
             break;
         }
         else if (tolower(key) == 'l') {
-            cout << "\nLog in is in progress!";
+            Login();
             break;
         }
         else {
