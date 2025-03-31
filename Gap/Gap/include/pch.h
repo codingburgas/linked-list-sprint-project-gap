@@ -4,8 +4,6 @@
 #include <string>
 #include "register.h"
 #include <vector>
-#include "../../BLL/include/register.h"
-#include "../../DAL/include/DAL.h"
 #include <fstream>
 #include "json.hpp"
 #include "menu.h"

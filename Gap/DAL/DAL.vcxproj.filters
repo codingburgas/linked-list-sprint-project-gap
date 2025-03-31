@@ -15,18 +15,18 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="src\DAL.cpp">
+    <ClCompile Include="src\files.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="include\DAL.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="include\framework.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="include\pch.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\files.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

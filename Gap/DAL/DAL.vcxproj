@@ -140,10 +140,10 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="src\DAL.cpp" />
+    <ClCompile Include="src\files.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="include\DAL.h" />
+    <ClInclude Include="include\files.h" />
     <ClInclude Include="include\framework.h" />
     <ClInclude Include="include\pch.h" />
   </ItemGroup>
