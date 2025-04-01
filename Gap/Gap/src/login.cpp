@@ -1,6 +1,11 @@
 #include "../include/login.h"
 using namespace std;
-void Login() {
+Login::Login() {
+	Login::display();
+}
+
+
+void Login::display() {
 	system("CLS");
 	string email, pass;
 	cout << "Welcome back to Gap!\n";
@@ -20,5 +25,8 @@ void Login() {
 	}
 	
 	
+
+}
+void Login::checkCreds() {
 
 }
