@@ -27,6 +27,9 @@
     <ClCompile Include="src\login.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="src\main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="include\register.h">
@@ -44,5 +47,8 @@
     <ClInclude Include="include\login.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="credentials.txt" />
   </ItemGroup>
 </Project>
