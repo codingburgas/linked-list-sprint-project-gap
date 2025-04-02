@@ -17,3 +17,4 @@
 #endif
 
 using nlohmann::ordered_json;
+using json = nlohmann::json;

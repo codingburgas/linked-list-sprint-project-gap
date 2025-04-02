@@ -1,5 +1,5 @@
 #include "../include/login.h"
-using namespace std;
+
 Login::Login() {
 	Login::display();
 }
@@ -7,22 +7,32 @@ Login::Login() {
 
 void Login::display() {
 	system("CLS");
-	string email, pass;
-	cout << "Welcome back to Gap!\n";
-	cout << "Email: ";
-	cin >> email;
-	while (!checkEmail(email)) {
-		cout << "Input valid email!" << endl;
-		cout << "Email: ";
-		cin >> email;
-	}
-	cout << "Password: ";
-	cin >> pass;
-	while (!checkPassword(pass)) {
-		cout << "Invalid password!" << endl;
-		cout << "Password: ";
-		cin >> pass;
-	}
+	std::fstream credentialsFile("../..");
+	if (!credentialsFile.is_open()) {
+			std::cout << "Error: Could not open the credentials file." << std::endl;
+		}
+	else std::cout << "File opened successfully!" << std::endl;
+
+	std::string email, pass;
+	std::cout << "Welcome back to Gap!\n";
+	std::cout << "Email: ";
+	std::cin >> email;
+	std::cout << "Email: ";
+    getline(std::cin, credentials::email);
+    while (!checkEmail(credentials::email)) {
+        std::cout << "Input valid email!\n";
+        std::cout << "Email: ";
+        getline(std::cin, credentials::email);
+    }
+
+    std::cout << "Password: ";
+    getline(std::cin, credentials::password);
+    while (!checkPassword(credentials::password)) {
+        std::cout << "Invalid password!\n";
+        std::cout << "Password: ";
+        getline(std::cin, credentials::password);
+    }
+
 	
 	
 
