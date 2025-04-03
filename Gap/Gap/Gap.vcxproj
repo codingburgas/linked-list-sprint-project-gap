@@ -127,7 +127,6 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="src\main.cpp" />
     <ClCompile Include="src\login.cpp" />
     <ClCompile Include="src\menu.cpp" />
     <ClCompile Include="src\register.cpp" />
