@@ -8,3 +8,4 @@ namespace credentials {
 	extern std::string email;
 	extern std::string password;
 }
+

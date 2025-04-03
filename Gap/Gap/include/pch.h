@@ -3,12 +3,14 @@
 #include <iostream>
 #include <string>
 #include "register.h"
+#include <vector>
 #include "../../BLL/include/register.h"
 #include "../../DAL/include/files.h"
 #include <fstream>
 #include "json.hpp"
 #include "menu.h"
 #include "login.h"
+#include <limits>
 
 #ifdef OSisWindows
     #include <conio.h>
@@ -18,3 +20,4 @@
 #endif
 
 using nlohmann::ordered_json;
+using json = nlohmann::json;
