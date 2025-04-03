@@ -1,6 +1,6 @@
 #include "../include/files.h"
 
-void insertRecord(std::string name, std::string lastName, std::string email, std::string password) {
+void insertRecord(std::string username, std::string firstName, std::string lastName, std::string email, std::string password) {
     std::ifstream inFile("../../Gap/Data/accounts.json");
     ordered_json data;
     if(! inFile){
@@ -20,7 +20,8 @@ void insertRecord(std::string name, std::string lastName, std::string email, std
 
     std::string newKey = std::to_string(key);
     ordered_json newEntry = {
-        {"name", name},
+        {"username", username},
+        {"firstName", firstName},
         {"lastName", lastName},
         {"email", email},
         {"password", password}
