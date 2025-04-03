@@ -7,8 +7,9 @@
 class Login {
 public:
 	Login();
-	void checkCreds();
 	void display();
+	void inputCreds();
+	void checkCreds();
 
 private:
 

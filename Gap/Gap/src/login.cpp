@@ -7,16 +7,22 @@ Login::Login() {
 
 void Login::display() {
 	system("CLS");
-	std::fstream credentialsFile("../..");
-	if (!credentialsFile.is_open()) {
-			std::cout << "Error: Could not open the credentials file." << std::endl;
-		}
-	else std::cout << "File opened successfully!" << std::endl;
-
-	std::string email, pass;
 	std::cout << "Welcome back to Gap!\n";
-	std::cout << "Email: ";
-	std::cin >> email;
+
+    std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n'); // Clear the input buffer 
+    Login::inputCreds();
+
+}
+
+void Login::inputCreds() {
+    std::cout << "Username: ";
+	getline(std::cin, credentials::username);
+    while (credentials::username.empty()) {
+        std::cout << "Username cannot be empty!\n";
+        std::cout << "Username: ";
+        getline(std::cin, credentials::username);
+    }
+
 	std::cout << "Email: ";
     getline(std::cin, credentials::email);
     while (!checkEmail(credentials::email)) {
@@ -26,17 +32,29 @@ void Login::display() {
     }
 
     std::cout << "Password: ";
-    getline(std::cin, credentials::password);
+    hidePassword(credentials::password);
     while (!checkPassword(credentials::password)) {
         std::cout << "Invalid password!\n";
         std::cout << "Password: ";
-        getline(std::cin, credentials::password);
+        hidePassword(credentials::password);
     }
 
-	
-	
-
+    Login::checkCreds();
 }
+
 void Login::checkCreds() {
+
+	if (!loginUser(credentials::username, credentials::email, credentials::password)) {
+        system("CLS");
+        std::cout << "Welcome back to Gap!\n";
+        std::cout << "Incorrect credentials. Try again!\n";
+		credentials::username = "";
+		credentials::firstName = "";
+		credentials::lastName = "";
+		credentials::email = "";
+		credentials::password = "";
+         
+        Login::inputCreds();
+	}
 
 }

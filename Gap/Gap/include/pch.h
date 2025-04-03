@@ -8,6 +8,7 @@
 #include "json.hpp"
 #include "menu.h"
 #include "login.h"
+#include <limits>
 
 #ifdef OSisWindows
     #include <conio.h>

@@ -70,6 +70,24 @@ bool checkValidity(const std::string& username, const std::string& email, const 
     return check;
 }
 
+void hidePassword(std::string& password) {
+    char ch;
+    password.clear();  // Clear the existing password if any
+    while ((ch = _getch()) != '\r') {  // Read characters until Enter is pressed
+        if (ch == 8) {  // Backspace key
+            if (!password.empty()) {
+                password.pop_back();
+                std::cout << "\b \b";  // Remove the last '*' character on the screen
+            }
+        }
+        else if (ch != 27) {  // Escape key
+            password.push_back(ch);  // Append character to the password
+            std::cout << '*';  // Print '*' for each character
+        }
+    }
+    std::cout << std::endl;  // Print a newline after the password
+}
+
 std::string createFileLine(std::string& username, std::string& email, std::string& password)
 {
     // Input all credentials in the file
