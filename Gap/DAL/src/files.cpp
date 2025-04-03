@@ -33,6 +33,7 @@ void insertRecord(std::string username, std::string firstName, std::string lastN
         outFile << data.dump(4);
         outFile.close();
         std::cout << "Record inserted successfully." << std::endl;
+        Dashboard();
     }
     else {
         std::cout << "Unable to open file for writing." << std::endl;
@@ -61,9 +62,7 @@ bool loginUser(std::string username, std::string email, std::string password) {
             if (user.contains("password") && user["password"] == password) {
                 credentials::firstName = user.value("firstName", "");
                 credentials::lastName = user.value("lastName", "");
-
-                std::cout << "Login successful!" << std::endl;
-                std::cout << "Welcome, " << credentials::firstName << " " << credentials::lastName << "!" << std::endl;
+                Dashboard();
                 return true;
             } else {
                 std::cout << "Incorrect password." << std::endl;

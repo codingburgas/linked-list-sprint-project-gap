@@ -10,6 +10,7 @@
 #include "json.hpp"
 #include "menu.h"
 #include "login.h"
+#include "dashboard.h"
 #include <limits>
 
 #ifdef OSisWindows
