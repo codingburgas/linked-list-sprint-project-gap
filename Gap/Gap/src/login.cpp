@@ -44,7 +44,7 @@ void Login::inputCreds() {
 
 void Login::checkCreds() {
 
-	if (!loginUser(credentials::username, credentials::email, credentials::password)) {
+	if (!loginUser(credentials::username, credentials::email, credentials::password, credentials::firstName, credentials::lastName)) {
         system("CLS");
         std::cout << "Welcome back to Gap!\n";
         std::cout << "Incorrect credentials. Try again!\n";

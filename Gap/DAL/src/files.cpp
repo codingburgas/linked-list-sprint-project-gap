@@ -40,7 +40,7 @@ void insertRecord(std::string username, std::string firstName, std::string lastN
 }
 
 
-bool loginUser(std::string username, std::string email, std::string password) {
+bool loginUser(std::string username, std::string email, std::string password, std::string firstName, std::string lastName) {
     std::ifstream inFile("../../Gap/Data/accounts.json");
     ordered_json data;
 
@@ -59,11 +59,9 @@ bool loginUser(std::string username, std::string email, std::string password) {
 
         if (user.contains("email") && user["email"] == email && user.contains("username") && user["username"] == username) {
             if (user.contains("password") && user["password"] == password) {
-                credentials::firstName = user.value("firstName", "");
-                credentials::lastName = user.value("lastName", "");
+                firstName = user.value("firstName", "");
+                lastName = user.value("lastName", "");
 
-                std::cout << "Login successful!" << std::endl;
-                std::cout << "Welcome, " << credentials::firstName << " " << credentials::lastName << "!" << std::endl;
                 return true;
             } else {
                 std::cout << "Incorrect password." << std::endl;
