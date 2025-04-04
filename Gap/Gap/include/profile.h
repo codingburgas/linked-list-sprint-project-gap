@@ -7,9 +7,10 @@ class Profile {
 public:
 	Profile();
 	void display();
-	void editProfile();
 
 
 private:
+	void editProfile();
+	void editCredentials();
 
 };

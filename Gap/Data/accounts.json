@@ -12,5 +12,12 @@
         "lastName": "S",
         "email": "n@gmail.com",
         "password": "WAt123!"
+    },
+    "3": {
+        "username": "Sash28",
+        "firstName": "Sasho",
+        "lastName": "Georgiev",
+        "email": "ag22@gmail.com",
+        "password": "Wat123!"
     }
 }

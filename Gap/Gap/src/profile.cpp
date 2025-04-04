@@ -63,7 +63,13 @@ void Profile::editProfile() {
             std::cout << "Confirm change? (Y/N): ";
             if (tolower(_getch()) == 'y') {
                 credentials::firstName = input;
-                editUserInfo();
+
+                editUserInfo(credentials::username,
+                    credentials::firstName,
+                    credentials::lastName,
+                    credentials::email,
+                    credentials::password);
+
                 std::cout << "First name updated.\n";
             }
             else {
@@ -77,7 +83,13 @@ void Profile::editProfile() {
             std::cout << "Confirm change? (Y/N): ";
             if (tolower(_getch()) == 'y') {
                 credentials::lastName = input;
-                editUserInfo(); 
+
+                editUserInfo(credentials::username,
+                    credentials::firstName,
+                    credentials::lastName,
+                    credentials::email,
+                    credentials::password);
+
                 std::cout << "Last name updated.\n";
             }
             else {
@@ -91,7 +103,13 @@ void Profile::editProfile() {
             std::cout << "Confirm change? (Y/N): ";
             if (tolower(_getch()) == 'y') {
                 credentials::username = input;
-                editUserInfo(); 
+
+                editUserInfo(credentials::username,
+                    credentials::firstName,
+                    credentials::lastName,
+                    credentials::email,
+                    credentials::password);
+
                 std::cout << "Username updated.\n";
             }
             else {
@@ -105,7 +123,6 @@ void Profile::editProfile() {
             break;
         }
 
-        _getch();
     }
 
     display();

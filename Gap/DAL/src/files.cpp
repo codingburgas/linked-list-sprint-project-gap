@@ -76,7 +76,7 @@ bool loginUser(std::string username, std::string email, std::string password) {
 }
 
 
-void editUserInfo() {
+void editUserInfo(std::string username, std::string firstName, std::string lastName, std::string email, std::string password) {
     std::ifstream inFile("../../Gap/Data/accounts.json");
     ordered_json data;
 
@@ -96,14 +96,14 @@ void editUserInfo() {
         auto key = it.key();
         auto& user = it.value();
 
-        if (user.contains("username") && user["username"] == credentials::username &&
-            user.contains("email") && user["email"] == credentials::email) {
+        if (user.contains("username") && user["username"] == username &&
+            user.contains("email") && user["email"] == email) {
 
-            user["firstName"] = credentials::firstName;
-            user["lastName"] = credentials::lastName;
-            user["username"] = credentials::username;
-            user["email"] = credentials::email;
-            user["password"] = credentials::password;
+            user["firstName"] = firstName;
+            user["lastName"] = lastName;
+            user["username"] = username;
+            user["email"] = email;
+            user["password"] = password;
 
             userFound = true;
             break;
