@@ -18,8 +18,6 @@ void Profile::display() {
     std::cout << std::endl;
     std::cout << "| [B] Back\n";
     std::cout << "| [E] Edit Profile\n";
-    std::cout << "| [V] Verify Email\n";
-    std::cout << "| [R] Reset Password\n";
 
     std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
     while (true) {
@@ -27,8 +25,6 @@ void Profile::display() {
         switch (tolower(key)) {
         case 'b': Dashboard();  break;
         case 'e': editProfile(); break;
-        case 'v':  break;
-        case 'r': break;
         default:
             std::cout << "\n  Invalid key. Try again: ";
             continue;
@@ -144,7 +140,6 @@ void Profile::editProfile() {
             running = false;
             break;
         }
-
     }
 
     display();
