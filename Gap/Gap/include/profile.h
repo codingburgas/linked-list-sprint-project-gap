@@ -8,9 +8,12 @@ public:
 	Profile();
 	void display();
 
-
 private:
 	void editProfile();
-	void editCredentials();
 
+	char key; 
+	std::string fullName = credentials::firstName + " " + credentials::lastName;
+	std::string input = "";
+
+	bool running = true;
 };

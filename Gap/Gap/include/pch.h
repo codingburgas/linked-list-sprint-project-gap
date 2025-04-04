@@ -1,6 +1,8 @@
 #pragma once
 
 #include <iostream>
+#include <iomanip>
+#include <sstream>
 #include <string>
 #include "register.h"
 #include <vector>
