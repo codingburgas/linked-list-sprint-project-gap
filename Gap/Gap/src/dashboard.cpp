@@ -20,10 +20,10 @@
      while (true) {
          key = _getch();
          switch (tolower(key)) {
-         case 'p': Profile(); break;
+         case 'p':  Profile(); break;
          case 's':  break;
          case 'l':  break;
-         case 't':  break;
+         case 't':  Timeline();  break;
          case 'c':  break;
          default:
              std::cout << "\n Invalid key. Try again: ";
