@@ -126,3 +126,51 @@ void editUserInfo(std::string username, std::string firstName, std::string lastN
     }
 }
 
+void displayEvents() {
+    std::ifstream inFile("../../Gap/Data/events.json");
+    if (!inFile) {
+        std::cout << "Error opening file." << std::endl;
+        return;
+    }
+
+    json data;
+    if (inFile.peek() != std::ifstream::traits_type::eof()) {
+        inFile >> data;
+    }
+    inFile.close();
+
+    if (data.empty()) {
+        std::cout << "No events found." << std::endl;
+        return;
+    }
+
+
+    for (auto& item : data.items()) {
+        json event = item.value();
+
+        std::cout << std::string(event["eventName"]) << "\n";  
+        std::cout << "Date: " << std::string(event["date"]) << "\n";
+
+        if (event.contains("endDate") && !event["endDate"].is_null())
+            std::cout << "End Date: " << std::string(event["endDate"]) << "\n";
+
+        std::cout << "Description: " << std::string(event["description"]) << "\n";
+        std::cout << "Created By: " << std::string(event["createdBy"]) << "\n";
+        std::cout << "Theme: " << std::string(event["theme"]) << "\n";
+
+        if (event.contains("leader") && !event["leader"].is_null())
+            std::cout << "Leader: " << std::string(event["leader"]) << "\n";
+
+        if (event.contains("casualties") && !event["casualties"].is_null())
+            std::cout << "Casualties: " << std::string(event["casualties"]) << "\n";
+
+        std::cout << "Participants: ";
+        for (const auto& participant : event["participants"]) {
+            std::cout << std::string(participant) << ", "; 
+        }
+        std::cout << "\nLocation: " << std::string(event["location"]) << "\n";
+    
+
+        std::cout << "+--------------------------------------------------+\n";
+    }
+}

@@ -12,6 +12,9 @@ void Timeline::display() {
     std::cout << "+-----------------------------+\n";
     char key;
     std::cout << "| [B] Back\n";
+    displayEvents();
+
+
     std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
     while (true) {
         key = _getch();

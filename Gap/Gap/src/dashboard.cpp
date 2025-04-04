@@ -17,6 +17,7 @@
      std::cout << "| [L] Library                     |\n";
      std::cout << "| [T] Timeline                    |\n";
      std::cout << "| [C] Create New Event            |\n";
+     std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
      while (true) {
          key = _getch();
          switch (tolower(key)) {
