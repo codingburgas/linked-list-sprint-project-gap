@@ -1,6 +1,8 @@
 #pragma once
 
 #include <iostream>
+#include <iomanip>
+#include <sstream>
 #include <string>
 #include "register.h"
 #include <vector>
@@ -11,6 +13,7 @@
 #include "menu.h"
 #include "login.h"
 #include "dashboard.h"
+#include "profile.h"
 #include <limits>
 
 #ifdef OSisWindows

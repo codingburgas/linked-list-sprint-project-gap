@@ -43,16 +43,12 @@ void menu()
     cout << "Type 'L' to Log in and 'R' to Register: ";
     while (true) {
         key = _getch();
-        if (tolower(key) == 'r') {
-            Register();
-            break;
-        }
-        else if (tolower(key) == 'l') {
-            Login();
-            break;
-        }
-        else {
-            cout << "\nInvalid key. Try again!";
+        switch (tolower(key)) {
+        case 'r': Register(); break;
+        case 'l': Login(); break;
+        default:
+            std::cout << "\n  Invalid key. Try again: ";
+            continue;
         }
     }
 }

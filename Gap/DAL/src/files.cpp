@@ -56,7 +56,7 @@ bool loginUser(std::string username, std::string email, std::string password) {
     inFile.close();
 
     for (auto it = data.begin(); it != data.end(); ++it) {
-        ordered_json user = it.value(); // Get user data
+        ordered_json user = it.value();
 
         if (user.contains("email") && user["email"] == email && user.contains("username") && user["username"] == username) {
             if (user.contains("password") && user["password"] == password) {
@@ -74,3 +74,55 @@ bool loginUser(std::string username, std::string email, std::string password) {
     std::cout << "User not found." << std::endl;
     return false;
 }
+
+
+void editUserInfo(std::string username, std::string firstName, std::string lastName, std::string email, std::string password) {
+    std::ifstream inFile("../../Gap/Data/accounts.json");
+    ordered_json data;
+
+    if (!inFile) {
+        std::cout << "Error opening file." << std::endl;
+        return;
+    }
+
+    if (inFile.peek() != std::ifstream::traits_type::eof()) {
+        inFile >> data;
+    }
+    inFile.close();
+
+    bool userFound = false;
+
+    for (auto it = data.begin(); it != data.end(); ++it) {
+        auto key = it.key();
+        auto& user = it.value();
+
+        if (user.contains("username") && user["username"] == username &&
+            user.contains("email") && user["email"] == email) {
+
+            user["firstName"] = firstName;
+            user["lastName"] = lastName;
+            user["username"] = username;
+            user["email"] = email;
+            user["password"] = password;
+
+            userFound = true;
+            break;
+        }
+    }
+
+    if (!userFound) {
+        std::cout << "User not found in file." << std::endl;
+        return;
+    }
+
+    std::ofstream outFile("../../Gap/Data/accounts.json", std::ios::out | std::ios::trunc);
+    if (outFile.is_open()) {
+        outFile << data.dump(4);
+        outFile.close();
+        std::cout << "User info updated successfully." << std::endl;
+    }
+    else {
+        std::cout << "Unable to open file for writing." << std::endl;
+    }
+}
+

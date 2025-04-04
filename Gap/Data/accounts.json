@@ -1,7 +1,7 @@
 {
     "1": {
         "username": "naikol",
-        "firstName": "Naikol",
+        "firstName": "Nikol",
         "lastName": "St",
         "email": "naikol@gmail.com",
         "password": "Wat123!"
@@ -12,5 +12,12 @@
         "lastName": "S",
         "email": "n@gmail.com",
         "password": "WAt123!"
+    },
+    "3": {
+        "username": "Sash28",
+        "firstName": "Alexander",
+        "lastName": "Georgiev",
+        "email": "ag22@gmail.com",
+        "password": "Wat123!"
     }
 }
