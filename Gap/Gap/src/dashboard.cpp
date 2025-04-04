@@ -12,23 +12,22 @@
      std::cout << "===============================" << std::endl;
      std::cout << "Ready for knowledge? "<< std::endl;
      char key;
-     std::cout << "Type 'P' to open Profile"<<std::endl<<"Type 'S' to open Search" << std::endl << "Type 'L' to open Library" << std::endl << "Type 'T' to open Timeline" << std::endl << "Type 'C' to Create new event";
+     std::cout << "| [P] Profile                     |\n";
+     std::cout << "| [S] Search                      |\n";
+     std::cout << "| [L] Library                     |\n";
+     std::cout << "| [T] Timeline                    |\n";
+     std::cout << "| [C] Create New Event            |\n";
      while (true) {
          key = _getch();
-         if (tolower(key) == 'p') {
-             break;
-         }
-         else if (tolower(key) == 's') {
-             break;
-         }
-         else if (tolower(key) == 't') {
-             break;
-         }
-         else if (tolower(key) == 'c') {
-             break;
-         }
-         else {
-             std::cout << "\nInvalid key. Try again!";
+         switch (tolower(key)) {
+         case 'p': Profile(); break;
+         case 's':  break;
+         case 'l':  break;
+         case 't':  break;
+         case 'c':  break;
+         default:
+             std::cout << "\n Invalid key. Try again: ";
+             continue;
          }
      }
  }

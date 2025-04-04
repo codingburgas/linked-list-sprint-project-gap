@@ -131,6 +131,7 @@
     <ClCompile Include="src\login.cpp" />
     <ClCompile Include="src\main.cpp" />
     <ClCompile Include="src\menu.cpp" />
+    <ClCompile Include="src\profile.cpp" />
     <ClCompile Include="src\register.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -139,6 +140,7 @@
     <ClInclude Include="include\login.h" />
     <ClInclude Include="include\menu.h" />
     <ClInclude Include="include\pch.h" />
+    <ClInclude Include="include\profile.h" />
     <ClInclude Include="include\register.h" />
   </ItemGroup>
   <ItemGroup>

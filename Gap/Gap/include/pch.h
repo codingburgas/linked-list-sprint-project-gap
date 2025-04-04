@@ -11,6 +11,7 @@
 #include "menu.h"
 #include "login.h"
 #include "dashboard.h"
+#include "profile.h"
 #include <limits>
 
 #ifdef OSisWindows
