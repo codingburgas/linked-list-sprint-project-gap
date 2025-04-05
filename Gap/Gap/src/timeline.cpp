@@ -12,7 +12,8 @@ void Timeline::display() {
     std::cout << "+-----------------------------+\n";
     char key;
     std::cout << "| [B] Back\n";
-    displayEvents();
+    Node* eventList = loadEventsFromJSON();
+    printEvents(eventList);
 
 
     std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');

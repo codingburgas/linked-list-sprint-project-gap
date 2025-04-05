@@ -148,6 +148,7 @@ void displayEvents() {
     for (auto& item : data.items()) {
         json event = item.value();
 
+        std::cout << "+--------------------------------------------------+\n";
         std::cout << std::string(event["eventName"]) << "\n";  
         std::cout << "Date: " << std::string(event["date"]) << "\n";
 
@@ -171,6 +172,6 @@ void displayEvents() {
         std::cout << "\nLocation: " << std::string(event["location"]) << "\n";
     
 
-        std::cout << "+--------------------------------------------------+\n";
     }
 }
+
