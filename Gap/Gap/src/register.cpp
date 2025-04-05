@@ -1,15 +1,11 @@
 #include "../include/register.h"
 
-Register::Register() {
-    Register::display();
-}
-
-void Register::display() {
+void Register::display(PageHandler& pages) {
     system("CLS");
     std::cout << "Welcome to Gap!" << std::endl;
 
-    std::cout << "Username: "; 
     std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+    std::cout << "Username: "; 
     getline(std::cin, credentials::username);
     while (credentials::username.empty()) {
         std::cout << "Username cannot be empty!\n";
@@ -49,7 +45,10 @@ void Register::display() {
         getline(std::cin, credentials::password);
     }
 
-    Register::checkAndInsertCreds();
+    checkAndInsertCreds();
+
+    pages.registerPageShouldDisplay = false;
+    pages.dashboardPageShouldDisplay = true;
 }
 
 void Register::checkAndInsertCreds() {

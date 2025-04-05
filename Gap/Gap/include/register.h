@@ -1,15 +1,14 @@
 #pragma once
-#include "../include/pch.h"
+#include "pch.h"
+#include "pageHandler.h"
 #include "../../DAL/include/files.h"
 #include "../../BLL/include/register.h"
 #include "../../BLL/include/credentials.h"
 
 class Register {
 public:
-	Register();
-	void checkAndInsertCreds();
-	void display();
+	void display(PageHandler& pages);
 
 private:
-
+	void checkAndInsertCreds();
 };

@@ -1,8 +1,9 @@
 #include "../include/pch.h"
 using namespace std;
 
-void menu()
+void menu(PageHandler& pages)
 {
+
     for (int i = 0; i < height; i++) {
         for (int j = 0; j < width; j++) {
             if (i == 0 || i == height - 1 || j == 0 || (i >= 3 && j == width - 1) || (i == 3 && j >= 3))
@@ -43,11 +44,19 @@ void menu()
     cout << "Type 'L' to Log in and 'R' to Register: ";
     while (true) {
         key = _getch();
-        switch (tolower(key)) {
-        case 'r': Register(); break;
-        case 'l': Login(); break;
-        default:
-            std::cout << "\n  Invalid key. Try again: ";
+        if (tolower(key) == 'r') {
+            pages.menuPageShouldDisplay = false;
+            pages.registerPageShouldDisplay = true;
+            break;
+        }
+
+        else if (tolower(key) == 'l') {
+            pages.menuPageShouldDisplay = false;
+            pages.loginPageShouldDisplay = true;
+            break;
+        }
+        else if (tolower(key) != '\n') {
+            std::cout << "\n Invalid key. Try again: ";
             continue;
         }
     }
