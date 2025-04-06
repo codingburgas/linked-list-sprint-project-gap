@@ -140,10 +140,16 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="include\credentials.h" />
+    <ClInclude Include="include\events.h" />
     <ClInclude Include="include\register.h" />
+    <ClInclude Include="include\textFormat.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="src\credentials.cpp" />
+    <ClCompile Include="src\events.cpp" />
     <ClCompile Include="src\register.cpp" />
+    <ClCompile Include="src\textFormat.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\DAL\DAL.vcxproj">

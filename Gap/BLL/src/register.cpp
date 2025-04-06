@@ -1,5 +1,5 @@
 #include "../include/register.h"
-using namespace std;
+
 bool checkPassword(std::string password)
 {
     bool checkSize = false;
@@ -28,7 +28,7 @@ bool checkPassword(std::string password)
         return false;
 }
 
-bool checkUsername(const std::string& username) {
+bool checkUsername(std::string& username) {
     // Check if the username is non-empty and does not contain spaces
     bool checkSize = !username.empty();
     bool checkSpaces = (username.find(' ') == std::string::npos);
@@ -36,7 +36,7 @@ bool checkUsername(const std::string& username) {
     return checkSize && checkSpaces;
 }
 
-bool checkEmail(const std::string& email) {
+bool checkEmail(std::string& email) {
     // Check if the email is non-empty and does not contain spaces
     bool checkSize = !email.empty();
     bool checkSpaces = (email.find(' ') == std::string::npos);
@@ -63,11 +63,29 @@ bool checkEmail(const std::string& email) {
     return checkSize && checkSpaces && checkAt && checkBandA && checkDot;
 }
 
-bool checkValidity(const std::string& username, const std::string& email, const std::string& password) {
+bool checkValidity(std::string& username, std::string& email, std::string& password) {
     // Check if all credentials are valid
     bool check = false;
     if (checkPassword(password) && checkUsername(username) && checkEmail(email)) check = true;
     return check;
+}
+
+void hidePassword(std::string& password) {
+    char ch;
+    password.clear();  // Clear the existing password if any
+    while ((ch = _getch()) != '\r') {  // Read characters until Enter is pressed
+        if (ch == 8) {  // Backspace key
+            if (!password.empty()) {
+                password.pop_back();
+                std::cout << "\b \b";  // Remove the last '*' character on the screen
+            }
+        }
+        else if (ch != 27) {  // Escape key
+            password.push_back(ch);  // Append character to the password
+            std::cout << '*';  // Print '*' for each character
+        }
+    }
+    std::cout << std::endl;  // Print a newline after the password
 }
 
 std::string createFileLine(std::string& username, std::string& email, std::string& password)

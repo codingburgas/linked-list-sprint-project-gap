@@ -1,11 +1,11 @@
 #pragma once
 #include "pch.h"
+#include "pageHandler.h"
 
 class Menu {
 public:
-	Menu();
 	void display();
-	void actionHandler();
+	void actionHandler(PageHandler& pages);
 
 private:
 	const int height = 7;

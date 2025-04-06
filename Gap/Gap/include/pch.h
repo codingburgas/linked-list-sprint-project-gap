@@ -1,6 +1,8 @@
 #pragma once
 
 #include <iostream>
+#include <iomanip>
+#include <sstream>
 #include <string>
 #include "register.h"
 #include <vector>
@@ -9,6 +11,10 @@
 #include "../../DAL/include/files.h"
 #include "json.hpp"
 #include "login.h"
+#include "dashboard.h"
+#include "profile.h"
+#include "timeline.h"
+#include <limits>
 
 #ifdef OSisWindows
     #include <conio.h>
@@ -18,3 +24,4 @@
 #endif
 
 using nlohmann::ordered_json;
+using json = nlohmann::json;

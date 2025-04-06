@@ -1,11 +1,8 @@
 #include "../include/menu.h"
 
-Menu::Menu() {
-    Menu::display();
-}
-
 void Menu::display()
 {
+
     for (int i = 0; i < height; i++) {
         for (int j = 0; j < width; j++) {
             if (i == 0 || i == height - 1 || j == 0 || (i >= 3 && j == width - 1) || (i == 3 && j >= 3))
@@ -41,25 +38,27 @@ void Menu::display()
     }
     std::cout << std::endl;
     std::cout << "App for history enthusiasts!\n";
-
-    Menu::actionHandler();
 }
 
-void Menu::actionHandler() {
+void Menu::actionHandler(PageHandler& pages) {
     char key;
     std::cout << "Type 'L' to Log in and 'R' to Register: ";
     while (true) {
         key = _getch();
         if (tolower(key) == 'r') {
-            Register();
+            pages.menuPageShouldDisplay = false;
+            pages.registerPageShouldDisplay = true;
             break;
         }
+
         else if (tolower(key) == 'l') {
-            Login();
+            pages.menuPageShouldDisplay = false;
+            pages.loginPageShouldDisplay = true;
             break;
         }
-        else {
-            std::cout << "\nInvalid key. Try again!";
+        else if (tolower(key) != '\n') {
+            std::cout << "\n Invalid key. Try again: ";
+            continue;
         }
     }
 }

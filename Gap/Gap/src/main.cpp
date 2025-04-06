@@ -1,9 +1,6 @@
-#include "../include/menu.h"
-using namespace std;
+#include "../include/app.h"
 
 int main()
 {
-    Menu::Menu();
+    App App;
 }
-
-

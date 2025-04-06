@@ -1,20 +1,23 @@
 {
     "1": {
-        "name": "Perla",
-        "lastName": "Hristova",
-        "email": "pkhristova22@CODINGBURGAS.BG",
-        "password": "Perla@08090809"
+        "username": "naikol",
+        "firstName": "Nikol",
+        "lastName": "St",
+        "email": "naikol@gmail.com",
+        "password": "Wat123!"
     },
     "2": {
-        "name": "perla",
-        "lastName": "hristova",
-        "email": "pkhristova22@codingburgas.bg",
-        "password": "Perla08090809@"
+        "username": "naikoll",
+        "firstName": "N",
+        "lastName": "S",
+        "email": "n@gmail.com",
+        "password": "WAt123!"
     },
     "3": {
-        "name": "Alex",
+        "username": "Sash28",
+        "firstName": "Alexander",
         "lastName": "Georgiev",
         "email": "ag22@gmail.com",
-        "password": "Wat71337!"
+        "password": "Wat123!"
     }
 }

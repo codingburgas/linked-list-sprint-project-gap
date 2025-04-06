@@ -127,17 +127,29 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="src\main.cpp" />
+    <ClCompile Include="src\app.cpp" />
+    <ClCompile Include="src\createEvent.cpp" />
+    <ClCompile Include="src\dashboard.cpp" />
     <ClCompile Include="src\login.cpp" />
+    <ClCompile Include="src\main.cpp" />
     <ClCompile Include="src\menu.cpp" />
+    <ClCompile Include="src\pageHandler.cpp" />
+    <ClCompile Include="src\profile.cpp" />
     <ClCompile Include="src\register.cpp" />
+    <ClCompile Include="src\timeline.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="include\app.h" />
+    <ClInclude Include="include\createEvent.h" />
+    <ClInclude Include="include\dashboard.h" />
     <ClInclude Include="include\json.hpp" />
     <ClInclude Include="include\login.h" />
     <ClInclude Include="include\menu.h" />
+    <ClInclude Include="include\pageHandler.h" />
     <ClInclude Include="include\pch.h" />
+    <ClInclude Include="include\profile.h" />
     <ClInclude Include="include\register.h" />
+    <ClInclude Include="include\timeline.h" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\BLL\BLL.vcxproj">
