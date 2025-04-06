@@ -1,20 +1,17 @@
 #include "../include/login.h"
 
-Login::Login() {
-	Login::display();
-}
-
-
-void Login::display() {
+void Login::display(PageHandler& pages) {
 	system("CLS");
 	std::cout << "Welcome back to Gap!\n";
 
-    std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n'); // Clear the input buffer 
     Login::inputCreds();
 
+    pages.dashboardPageShouldDisplay = true;
+    pages.loginPageShouldDisplay = false;
 }
 
 void Login::inputCreds() {
+    std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
     std::cout << "Username: ";
 	getline(std::cin, credentials::username);
     while (credentials::username.empty()) {
@@ -44,17 +41,16 @@ void Login::inputCreds() {
 
 void Login::checkCreds() {
 
-	if (!loginUser(credentials::username, credentials::email, credentials::password)) {
+    if (!loginUser(credentials::username, credentials::email, credentials::password)) {
         system("CLS");
         std::cout << "Welcome back to Gap!\n";
         std::cout << "Incorrect credentials. Try again!\n";
-		credentials::username = "";
-		credentials::firstName = "";
-		credentials::lastName = "";
-		credentials::email = "";
-		credentials::password = "";
-         
-        Login::inputCreds();
-	}
+        credentials::username = "";
+        credentials::firstName = "";
+        credentials::lastName = "";
+        credentials::email = "";
+        credentials::password = "";
 
+        Login::inputCreds();
+    }
 }

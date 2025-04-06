@@ -127,19 +127,23 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="src\app.cpp" />
     <ClCompile Include="src\dashboard.cpp" />
     <ClCompile Include="src\login.cpp" />
     <ClCompile Include="src\main.cpp" />
     <ClCompile Include="src\menu.cpp" />
+    <ClCompile Include="src\pageHandler.cpp" />
     <ClCompile Include="src\profile.cpp" />
     <ClCompile Include="src\register.cpp" />
     <ClCompile Include="src\timeline.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="include\app.h" />
     <ClInclude Include="include\dashboard.h" />
     <ClInclude Include="include\json.hpp" />
     <ClInclude Include="include\login.h" />
     <ClInclude Include="include\menu.h" />
+    <ClInclude Include="include\pageHandler.h" />
     <ClInclude Include="include\pch.h" />
     <ClInclude Include="include\profile.h" />
     <ClInclude Include="include\register.h" />
@@ -149,11 +153,6 @@
     <ProjectReference Include="..\BLL\BLL.vcxproj">
       <Project>{669834e9-65a7-4b3e-ad39-ade84bc89078}</Project>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <Text Include="credentials.txt">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
-    </Text>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -1,10 +1,5 @@
 ﻿#include "../include/profile.h"
 
-Profile::Profile() {
-    Profile::display();
-}
-
-
 void Profile::display() {
     system("CLS");
     
@@ -19,14 +14,23 @@ void Profile::display() {
     std::cout << "| [B] Back\n";
     std::cout << "| [E] Edit Profile\n";
 
-    std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+}
+
+void Profile::actionHandler(PageHandler& pages) {
     while (true) {
         key = _getch();
-        switch (tolower(key)) {
-        case 'b': Dashboard();  break;
-        case 'e': editProfile(); break;
-        default:
-            std::cout << "\n  Invalid key. Try again: ";
+        if (tolower(key) == 'b') {
+            pages.profilePageShouldDisplay = false;
+            pages.dashboardPageShouldDisplay = true;
+            break;
+        }
+        
+        else if (tolower(key) == 'e') {
+            editProfile();
+            break;
+        }
+        else if(tolower(key) != '\n'){
+            std::cout << "\n Invalid key. Try again: ";
             continue;
         }
     }

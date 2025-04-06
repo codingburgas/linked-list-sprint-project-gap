@@ -1,9 +1,9 @@
-#include "../include/menu.h"
+#include "../include/app.h"
 using namespace std;
 
 int main()
 {
-    menu();
+    App App;
 }
 
 

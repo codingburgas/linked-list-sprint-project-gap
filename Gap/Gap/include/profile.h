@@ -5,8 +5,8 @@
 
 class Profile {
 public:
-	Profile();
 	void display();
+	void actionHandler(PageHandler& pages);
 
 private:
 	void editProfile();
