@@ -1,11 +1,17 @@
 #pragma once
 #include "pch.h"
 #include "pageHandler.h"
-#define height 7
-#define spacing 2
-#define width 7
-#define textWidth width * 3 + spacing * 2
-#define verticalHeight 3
-#define horizontalWidth 7
 
-void menu(PageHandler& pages);
+class Menu {
+public:
+	void display();
+	void actionHandler(PageHandler& pages);
+
+private:
+	const int height = 7;
+	const int width = 7;
+	const int spacing = 2;
+	const int textWidth = width * 3 + spacing * 2;
+	const int verticalHeight = 3;
+	const int horizontalWidth = 7;
+};
