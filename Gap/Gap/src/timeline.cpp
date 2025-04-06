@@ -10,7 +10,7 @@ void Timeline::display() {
     ordered_json data = fetchEventsFromJSON(filePath);
     Node* eventList = buildEventsList(data);
 
-    printEvents(eventList);
+    printCleanEvent(eventList);
 
 
     std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');

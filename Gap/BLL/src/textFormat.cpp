@@ -7,9 +7,13 @@ std::string wrapText(const std::string& text) {
     std::string word;
     size_t lineLength = 0;
 
+    std::string indent = std::string(10, ' '); 
+
+    wrapped << indent; 
+
     while (words >> word) {
         if (lineLength + word.length() + 1 > width) {
-            wrapped << "\n";
+            wrapped << "\n" << indent; 
             lineLength = 0;
         }
         if (lineLength != 0) {
