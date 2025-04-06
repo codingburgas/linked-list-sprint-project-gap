@@ -6,6 +6,7 @@
 #include "menu.h"
 #include "dashboard.h"
 #include "profile.h"
+#include "timeline.h"
 
 class App {
 public:
@@ -17,6 +18,7 @@ private:
 	Register reg;
 	Profile profile;
 	Dashboard dash; 
+	Timeline timeline;
 	PageHandler pages;
 
 	bool running = true;

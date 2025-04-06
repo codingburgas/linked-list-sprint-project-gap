@@ -89,3 +89,32 @@ void printEvents(Node* head) {
     std::cout << "+";
 }
 
+// for timeline page
+void printCleanEvent(Node* head) {
+    if (!head) {
+        std::cout << "No events to display.\n";
+        return;
+    }
+    head = sortByDate(head);
+    Node* current = head;
+
+    while (current) {
+        Event& e = current->data;
+
+        std::cout << "\n\n+";
+        for (int i = 0; i < 85; i++) std::cout << "-";
+        std::cout << "+\n\n";
+
+        std::cout << std::setw(10) << "" << e.eventName << "\n";
+        std::cout << std::setw(10) << "" << e.date << "\n";
+        if (!e.endDate.empty()) std::cout << std::setw(10) << "" << "End Date: " << e.endDate << "\n";
+        std::cout << wrapText(e.description) << "\n";
+
+        current = current->next;
+    }
+
+    std::cout << "\n\n+";
+    for (int i = 0; i < 85; i++) std::cout << "-";
+    std::cout << "+";
+}
+

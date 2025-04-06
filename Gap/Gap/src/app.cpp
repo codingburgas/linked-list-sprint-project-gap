@@ -29,6 +29,10 @@ void App::pageHandler() {
 		profile.actionHandler(pages);
 		return;
 	}
+	if (pages.timelinePageShouldDisplay) {
+		timeline.display();
+		timeline.actionHandler(pages);
+	}
 	if (pages.exitApp) {
 		running = false;
 		return;
