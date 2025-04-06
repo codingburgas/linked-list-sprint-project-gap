@@ -2,8 +2,11 @@
 
 void Login::display(PageHandler& pages) {
 	system("CLS");
-	std::cout << "Welcome back to Gap!\n";
+    std::cout << "+-----------------------------+\n";
+    std::cout << "|     Welcome back to Gap!    |\n";
+    std::cout << "+-----------------------------+\n";
 
+    std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
     Login::inputCreds();
 
     pages.dashboardPageShouldDisplay = true;
@@ -11,7 +14,6 @@ void Login::display(PageHandler& pages) {
 }
 
 void Login::inputCreds() {
-    std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
     std::cout << "Username: ";
 	getline(std::cin, credentials::username);
     while (credentials::username.empty()) {

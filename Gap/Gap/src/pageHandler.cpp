@@ -8,6 +8,7 @@ PageHandler::PageHandler() {
     dashboardPageShouldDisplay = false;
     profilePageShouldDisplay = false;
     timelinePageShouldDisplay = false;
+    createEventPageShouldDisplay = false;
 }
 
 PageHandler pages;

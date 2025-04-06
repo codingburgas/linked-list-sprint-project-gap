@@ -48,6 +48,9 @@
     <ClCompile Include="src\library.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="src\createEvent.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="include\register.h">
@@ -81,6 +84,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="include\library.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\createEvent.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

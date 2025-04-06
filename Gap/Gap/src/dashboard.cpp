@@ -2,15 +2,17 @@
 
  void Dashboard::display() {
 	 system("CLS");
-     std::cout << "===============================" << std::endl;
-	 std::cout << "Hey, " << credentials::firstName << " " << credentials::lastName<<"!" << std::endl;
-     std::cout << "===============================" << std::endl;
-     std::cout << "Ready for knowledge? "<< std::endl;
+     std::cout << "===================================" << std::endl;
+	 std::cout << "  Hey, " << credentials::firstName << " " << credentials::lastName<<"!" << std::endl;
+     std::cout << "===================================" << std::endl;
+     std::cout << "|       Ready for knowledge?      |"<< std::endl;
      std::cout << "| [P] Profile                     |\n";
      std::cout << "| [S] Search                      |\n";
      std::cout << "| [L] Library                     |\n";
      std::cout << "| [T] Timeline                    |\n";
      std::cout << "| [C] Create New Event            |\n";
+     std::cout << "| [E] Log Out                     |\n";
+     std::cout << "===================================" << std::endl;
  }
 
  void Dashboard::actionHandler(PageHandler& pages) {
@@ -37,6 +39,18 @@
              break;
          }
          else if (tolower(key) == 'c') {
+             pages.createEventPageShouldDisplay = true;
+             pages.dashboardPageShouldDisplay = false;
+             break;
+         }
+         else if (tolower(key) == 'e') {
+			 credentials::username = "";
+			 credentials::firstName = "";
+			 credentials::lastName = "";    
+			 credentials::email = "";
+			 credentials::password = "";
+             pages.menuPageShouldDisplay = true;
+             pages.dashboardPageShouldDisplay = false;
              break;
          }
          else if(tolower(key) != '\n') {

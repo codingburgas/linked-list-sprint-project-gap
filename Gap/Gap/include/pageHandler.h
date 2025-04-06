@@ -11,4 +11,5 @@ public:
     bool profilePageShouldDisplay;
     bool timelinePageShouldDisplay;
     bool libraryPageShouldDisplay;
+    bool createEventPageShouldDisplay;
 };

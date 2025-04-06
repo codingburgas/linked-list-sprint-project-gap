@@ -8,6 +8,7 @@
 #include "profile.h"
 #include "timeline.h"
 #include "library.h"
+#include "createEvent.h"
 
 class App {
 public:
@@ -15,12 +16,14 @@ public:
 
 private:
 	void pageHandler();
+	Menu menu;
 	Login login;
 	Register reg;
 	Profile profile;
 	Dashboard dash; 
 	Timeline timeline;
 	Library library;
+	CreateEvent createEvent;
 	PageHandler pages;
 
 	bool running = true;

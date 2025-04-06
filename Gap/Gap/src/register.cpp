@@ -2,7 +2,9 @@
 
 void Register::display(PageHandler& pages) {
     system("CLS");
-    std::cout << "Welcome to Gap!" << std::endl;
+    std::cout << "+-----------------------------+\n";
+    std::cout << "|       Welcome to Gap!       |\n";
+    std::cout << "+-----------------------------+\n";
 
     std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
     std::cout << "Username: "; 
@@ -38,11 +40,11 @@ void Register::display(PageHandler& pages) {
     }
 
     std::cout << "Password: ";
-    getline(std::cin, credentials::password);
+    hidePassword(credentials::password);
     while (!checkPassword(credentials::password)) {
         std::cout << "Invalid password!\n";
         std::cout << "Password: ";
-        getline(std::cin, credentials::password);
+        hidePassword(credentials::password);
     }
 
     checkAndInsertCreds();

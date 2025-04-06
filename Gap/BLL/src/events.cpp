@@ -115,6 +115,6 @@ void printCleanEvent(Node* head) {
 
     std::cout << "\n\n+";
     for (int i = 0; i < 85; i++) std::cout << "-";
-    std::cout << "+";
+    std::cout << "+\n";
 }
 
