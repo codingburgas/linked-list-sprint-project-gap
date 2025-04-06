@@ -95,7 +95,7 @@ void printCleanEvent(Node* head) {
         std::cout << "No events to display.\n";
         return;
     }
-
+    head = sortByDate(head);
     Node* current = head;
 
     while (current) {
