@@ -123,3 +123,27 @@ void editUserInfo(std::string username, std::string firstName, std::string lastN
     }
 }
 
+
+// Fetch and save event information
+
+ordered_json fetchEventsFromJSON(const std::string& filePath = "../../Gap/Data/accounts.json") {
+    ordered_json eventData;
+    
+    std::ifstream inFile(filePath);
+    if (!inFile) {
+        std::cout << "Error opening file." << std::endl;
+        return eventData;
+    }
+
+    if (inFile.peek() != std::ifstream::traits_type::eof()) {
+        inFile >> eventData;
+    }
+    inFile.close();
+
+    if (eventData.empty()) {
+        std::cout << "No events found." << std::endl;
+        return eventData;
+    }
+
+    return eventData;
+}

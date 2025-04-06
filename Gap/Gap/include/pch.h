@@ -14,6 +14,7 @@
 #include "login.h"
 #include "dashboard.h"
 #include "profile.h"
+#include "timeline.h"
 #include <limits>
 
 #ifdef OSisWindows

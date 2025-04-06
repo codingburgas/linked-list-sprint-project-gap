@@ -42,6 +42,9 @@
     <ClCompile Include="src\pageHandler.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="src\timeline.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="include\register.h">
@@ -71,5 +74,11 @@
     <ClInclude Include="include\app.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="include\timeline.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="credentials.txt" />
   </ItemGroup>
 </Project>

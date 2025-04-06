@@ -21,12 +21,24 @@
     <ClInclude Include="include\credentials.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="include\events.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\textFormat.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\register.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="src\credentials.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\events.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\textFormat.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
