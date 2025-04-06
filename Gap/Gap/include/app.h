@@ -15,6 +15,7 @@ public:
 
 private:
 	void pageHandler();
+	Menu menu;
 	Login login;
 	Register reg;
 	Profile profile;

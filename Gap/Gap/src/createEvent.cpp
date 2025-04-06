@@ -11,10 +11,10 @@ void CreateEvent::display() {
     key = _getch();
     if (tolower(key) == 'c') {
         inputEventInfo();
+        createEvent(eventName, date, endDate, description, credentials::username, leader, theme, casualties, participants, location);
+        display();
     }
-    
-    createEvent(eventName, date, endDate, description, credentials::username, leader, theme, casualties, participants, location);
-    display();
+
 }
 
 void CreateEvent::inputEventInfo() {

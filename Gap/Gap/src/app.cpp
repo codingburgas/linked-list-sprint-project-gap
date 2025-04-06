@@ -8,7 +8,8 @@ App::App() {
 
 void App::pageHandler() {
 	if (pages.menuPageShouldDisplay) {
-		menu(pages);
+		menu.display();
+		menu.actionHandler(pages);
 		return;
 	}
 	if (pages.registerPageShouldDisplay) {

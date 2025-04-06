@@ -8,6 +8,7 @@ public:
 	void actionHandler(PageHandler& pages);
 
 private:
+	char key;
 	const int height = 7;
 	const int width = 7;
 	const int spacing = 2;
