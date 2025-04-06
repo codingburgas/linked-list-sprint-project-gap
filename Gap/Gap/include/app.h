@@ -7,6 +7,7 @@
 #include "dashboard.h"
 #include "profile.h"
 #include "timeline.h"
+#include "library.h"
 
 class App {
 public:
@@ -19,6 +20,7 @@ private:
 	Profile profile;
 	Dashboard dash; 
 	Timeline timeline;
+	Library library;
 	PageHandler pages;
 
 	bool running = true;

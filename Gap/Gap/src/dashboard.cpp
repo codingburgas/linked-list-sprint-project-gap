@@ -27,6 +27,8 @@
 
          }
          else if (tolower(key) == 'l') {
+             pages.libraryPageShouldDisplay = true;
+             pages.dashboardPageShouldDisplay = false;
              break;
          }
          else if (tolower(key) == 't') {

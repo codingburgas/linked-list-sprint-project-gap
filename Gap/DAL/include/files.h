@@ -11,3 +11,5 @@ void insertRecord(std::string username, std::string firstName, std::string lastN
 void editUserInfo(std::string username, std::string firstName, std::string lastName, std::string email, std::string password);
 
 ordered_json fetchEventsFromJSON(const std::string& filePath);
+
+void displayEventsByTheme(const std::string& theme);

@@ -147,3 +147,49 @@ ordered_json fetchEventsFromJSON(const std::string& filePath = "../../Gap/Data/a
 
     return eventData;
 }
+
+
+void displayEventsByTheme(const std::string& theme) {
+    ordered_json data = fetchEventsFromJSON("../../Gap/Data/events.json");
+
+    if (data.empty()) {
+        std::cout << "No event data available.\n";
+        return;
+    }
+
+    bool found = false;
+
+    for (auto& item : data.items()) {
+        ordered_json event = item.value();
+
+        if (event.contains("theme") && event["theme"] == theme) {
+            found = true;
+            std::cout << "\n" << event["eventName"].get<std::string>() << "\n";
+            std::cout << "Date: " << event["date"] << "\n";
+            if (event.contains("endDate") && !event["endDate"].is_null())
+                std::cout << "End Date: " << event["endDate"] << "\n";
+            std::cout << "Description: " << event["description"] << "\n";
+            std::cout << "Created By: " << event["createdBy"] << "\n";
+            std::cout << "Theme: " << event["theme"] << "\n";
+            if (event.contains("leader") && !event["leader"].is_null())
+                std::cout << "Leader: " << event["leader"] << "\n";
+            if (event.contains("casualties") && !event["casualties"].is_null())
+                std::cout << "Casualties: " << event["casualties"] << "\n";
+            std::cout << "Participants: ";
+            for (const auto& p : event["participants"]) {
+                std::cout << p << " ";
+            }
+            std::cout << "\nLocation: " << event["location"] << "\n";
+            std::cout << "-----------------------------\n";
+        }
+    }
+
+    if (!found) {
+        std::cout << "No events found for the theme: " << theme << "\n";
+    }
+
+   
+}
+
+
+
