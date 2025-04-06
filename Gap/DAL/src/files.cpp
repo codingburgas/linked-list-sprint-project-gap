@@ -126,52 +126,27 @@ void editUserInfo(std::string username, std::string firstName, std::string lastN
     }
 }
 
-void displayEvents() {
-    std::ifstream inFile("../../Gap/Data/events.json");
+
+// Fetch and save event information
+
+ordered_json fetchEventsFromJSON(const std::string& filePath = "../../Gap/Data/accounts.json") {
+    ordered_json eventData;
+    
+    std::ifstream inFile(filePath);
     if (!inFile) {
         std::cout << "Error opening file." << std::endl;
-        return;
+        return eventData;
     }
 
-    json data;
     if (inFile.peek() != std::ifstream::traits_type::eof()) {
-        inFile >> data;
+        inFile >> eventData;
     }
     inFile.close();
 
-    if (data.empty()) {
+    if (eventData.empty()) {
         std::cout << "No events found." << std::endl;
-        return;
+        return eventData;
     }
 
-
-    for (auto& item : data.items()) {
-        json event = item.value();
-
-        std::cout << "+--------------------------------------------------+\n";
-        std::cout << std::string(event["eventName"]) << "\n";  
-        std::cout << "Date: " << std::string(event["date"]) << "\n";
-
-        if (event.contains("endDate") && !event["endDate"].is_null())
-            std::cout << "End Date: " << std::string(event["endDate"]) << "\n";
-
-        std::cout << "Description: " << std::string(event["description"]) << "\n";
-        std::cout << "Created By: " << std::string(event["createdBy"]) << "\n";
-        std::cout << "Theme: " << std::string(event["theme"]) << "\n";
-
-        if (event.contains("leader") && !event["leader"].is_null())
-            std::cout << "Leader: " << std::string(event["leader"]) << "\n";
-
-        if (event.contains("casualties") && !event["casualties"].is_null())
-            std::cout << "Casualties: " << std::string(event["casualties"]) << "\n";
-
-        std::cout << "Participants: ";
-        for (const auto& participant : event["participants"]) {
-            std::cout << std::string(participant) << ", "; 
-        }
-        std::cout << "\nLocation: " << std::string(event["location"]) << "\n";
-    
-
-    }
+    return eventData;
 }
-

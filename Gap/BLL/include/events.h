@@ -1,6 +1,7 @@
 #pragma once
 #include "../../Gap/include/pch.h"
 #include "../../DAL/include/files.h"
+#include "../include/textFormat.h"
 
 struct Event {
     std::string eventName;
@@ -23,5 +24,5 @@ struct Node {
 };
 
 Node* addNode(Node* head, const Event& e);
-Node* loadEventsFromJSON();
+Node* buildEventsList(const ordered_json& data);
 void printEvents(Node* head);

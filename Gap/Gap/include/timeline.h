@@ -10,5 +10,6 @@ public:
 
 
 private:
-
+	char key;
+	const std::string& filePath = "../../Gap/Data/events.json";
 };

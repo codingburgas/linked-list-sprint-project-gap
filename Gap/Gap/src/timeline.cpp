@@ -10,9 +10,11 @@ void Timeline::display() {
     std::cout << "+-----------------------------+\n";
     std::cout << "|           Timeline          |\n";
     std::cout << "+-----------------------------+\n";
-    char key;
     std::cout << "| [B] Back\n";
-    Node* eventList = loadEventsFromJSON();
+
+    ordered_json data = fetchEventsFromJSON(filePath);
+    Node* eventList = buildEventsList(data);
+
     printEvents(eventList);
 
 

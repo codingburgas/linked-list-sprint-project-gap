@@ -13,38 +13,42 @@ Node* addNode(Node* head, const Event& e) {
     return head;
 }
 
-Node* loadEventsFromJSON() {
-    std::ifstream inFile("../../Gap/Data/accounts.json");
-    if (!inFile) {
-        std::cout << "Error opening file." << std::endl;
-       
+Node* buildEventsList(const ordered_json& eventData) {
+    if (eventData.empty()) {
+        std::cout << "No events found.\n";
+        return nullptr;
     }
-
-    json data;
-    if (inFile.peek() != std::ifstream::traits_type::eof()) {
-        inFile >> data;
-    }
-    inFile.close();
-
-    if (data.empty()) {
-        std::cout << "No events found." << std::endl;
-        
-    }
-
 
     Node* head = nullptr;
 
-    for (const auto& item : data) {
+    for (const auto& item : eventData.items()) {
+        const auto& eventData = item.value();
         Event e;
-        e.eventName = item.value("eventName", "");
-        e.date = item.value("date", "");
-        e.endDate = item.value("endDate", "");
-        e.description = item.value("description", "");
-        e.createdBy = item.value("createdBy", "");
-        e.leader = item.value("leader", "");
-        e.casualties = item.value("casualties", "");
-        e.participants = item.value("participants", "");
-        e.location = item.value("location", "");
+
+        // Required fields (assume always string)
+        e.eventName = eventData.value("eventName", "");
+        e.date = eventData.value("date", "");
+        e.description = eventData.value("description", "");
+        e.location = eventData.value("location", "");
+
+        // Optional / nullable fields
+        e.endDate = eventData.contains("endDate") && !eventData["endDate"].is_null() ? eventData["endDate"] : "";
+        e.leader = eventData.contains("leader") && !eventData["leader"].is_null() ? eventData["leader"] : "";
+        e.casualties = eventData.contains("casualties") && !eventData["casualties"].is_null() ? eventData["casualties"] : "";
+        e.createdBy = eventData.contains("createdBy") && !eventData["createdBy"].is_null() ? eventData["createdBy"] : "";
+
+        // Participants array -> comma-separated string
+        if (eventData.contains("participants") && eventData["participants"].is_array()) {
+            for (const auto& p : eventData["participants"]) {
+                if (!p.is_null()) {
+                    e.participants += p.get<std::string>() + ", ";
+                }
+            }
+            // Remove last ", " if added
+            if (!e.participants.empty()) {
+                e.participants.erase(e.participants.size() - 2);
+            }
+        }
 
         head = addNode(head, e);
     }
@@ -53,20 +57,35 @@ Node* loadEventsFromJSON() {
 }
 
 void printEvents(Node* head) {
+    if (!head) {
+        std::cout << "No events to display.\n";
+        return;
+    }
+
     Node* current = head;
 
     while (current) {
         Event& e = current->data;
-        std::cout << e.eventName << "\n";
-        std::cout << "Date: " << e.date << "\n";
-        if (!e.endDate.empty()) std::cout << "End Date: " << e.endDate << "\n";
-        std::cout << "Description: " << e.description << "\n";
-        std::cout << "Created By: " << e.createdBy << "\n";
-        if (!e.leader.empty()) std::cout << "Leader: " << e.leader << "\n";
-        if (!e.casualties.empty()) std::cout << "Casualties: " << e.casualties << "\n";
-        std::cout << "Participants: " << e.participants << "\n";
-        std::cout << "Location: " << e.location << "\n\n";
+
+        std::cout << "\n\n+";
+        for (int i = 0; i < 85; i++) std::cout << "-";
+        std::cout << "+\n\n";
+
+        std::cout << "Event: " << e.eventName;
+        std::cout << "\nDate: " << e.date;
+        if (!e.endDate.empty()) std::cout << "\nEnd Date: " << e.endDate;
+        std::cout << "\nDescription: " << wrapText(e.description);
+        if (!e.leader.empty()) std::cout << "\nLeader: " << e.leader;
+        if (!e.casualties.empty()) std::cout << "\nCasualties: " << e.casualties;
+        std::cout << "\nParticipants: " << e.participants;
+        std::cout << "\nLocation: " << e.location;
+        if(!e.createdBy.empty()) std::cout << "\nCreated By: " << e.createdBy;
 
         current = current->next;
     }
+
+    std::cout << "\n\n+";
+    for (int i = 0; i < 85; i++) std::cout << "-";
+    std::cout << "+";
 }
+
