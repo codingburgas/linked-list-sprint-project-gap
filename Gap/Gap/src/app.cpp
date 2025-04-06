@@ -33,6 +33,10 @@ void App::pageHandler() {
 		timeline.display();
 		timeline.actionHandler(pages);
 	}
+	if (pages.createEventPageShouldDisplay) {
+		createEvent.display();
+		createEvent.actionHandler(pages);
+	}
 	if (pages.exitApp) {
 		running = false;
 		return;

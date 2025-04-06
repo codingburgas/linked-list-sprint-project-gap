@@ -35,6 +35,8 @@
              break;
          }
          else if (tolower(key) == 'c') {
+             pages.createEventPageShouldDisplay = true;
+             pages.dashboardPageShouldDisplay = false;
              break;
          }
          else if(tolower(key) != '\n') {

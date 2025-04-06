@@ -128,6 +128,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="src\app.cpp" />
+    <ClCompile Include="src\createEvent.cpp" />
     <ClCompile Include="src\dashboard.cpp" />
     <ClCompile Include="src\login.cpp" />
     <ClCompile Include="src\main.cpp" />
@@ -139,6 +140,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="include\app.h" />
+    <ClInclude Include="include\createEvent.h" />
     <ClInclude Include="include\dashboard.h" />
     <ClInclude Include="include\json.hpp" />
     <ClInclude Include="include\login.h" />
