@@ -38,11 +38,11 @@ void Register::display(PageHandler& pages) {
     }
 
     std::cout << "Password: ";
-    getline(std::cin, credentials::password);
+    hidePassword(credentials::password);
     while (!checkPassword(credentials::password)) {
         std::cout << "Invalid password!\n";
         std::cout << "Password: ";
-        getline(std::cin, credentials::password);
+        hidePassword(credentials::password);
     }
 
     checkAndInsertCreds();
