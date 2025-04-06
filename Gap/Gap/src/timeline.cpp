@@ -1,10 +1,5 @@
 #include "../include/timeline.h"
 
-Timeline::Timeline() {
-    Timeline::display();
-}
-
-
 void Timeline::display() {
     system("CLS");
     std::cout << "+-----------------------------+\n";
@@ -19,11 +14,18 @@ void Timeline::display() {
 
 
     std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+    
+}
+
+void Timeline::actionHandler(PageHandler& pages) {
     while (true) {
         key = _getch();
-        switch (tolower(key)) {
-        case 'b': Dashboard(); break;
-        default:
+        if (tolower(key) == 'b') {
+            pages.timelinePageShouldDisplay = false;
+            pages.dashboardPageShouldDisplay = true;;
+            break;
+        }
+        else if (tolower(key) != '\n') {
             std::cout << "\n Invalid key. Try again: ";
             continue;
         }

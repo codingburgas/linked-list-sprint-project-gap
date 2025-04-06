@@ -30,6 +30,8 @@
              break;
          }
          else if (tolower(key) == 't') {
+             pages.timelinePageShouldDisplay = true;
+             pages.dashboardPageShouldDisplay = false;
              break;
          }
          else if (tolower(key) == 'c') {
