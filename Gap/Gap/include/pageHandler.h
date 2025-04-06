@@ -10,4 +10,5 @@ public:
     bool dashboardPageShouldDisplay;
     bool profilePageShouldDisplay;
     bool timelinePageShouldDisplay;
+    bool createEventPageShouldDisplay;
 };
