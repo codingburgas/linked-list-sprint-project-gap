@@ -7,6 +7,7 @@
 #include "dashboard.h"
 #include "profile.h"
 #include "timeline.h"
+#include "library.h"
 #include "createEvent.h"
 
 class App {
@@ -21,6 +22,7 @@ private:
 	Profile profile;
 	Dashboard dash; 
 	Timeline timeline;
+	Library library;
 	CreateEvent createEvent;
 	PageHandler pages;
 

@@ -10,5 +10,6 @@ public:
     bool dashboardPageShouldDisplay;
     bool profilePageShouldDisplay;
     bool timelinePageShouldDisplay;
+    bool libraryPageShouldDisplay;
     bool createEventPageShouldDisplay;
 };

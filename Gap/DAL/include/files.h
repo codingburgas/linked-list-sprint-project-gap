@@ -25,3 +25,5 @@ void createEvent(std::string eventName,
 	std::string casualties, 
 	std::vector<std::string> participants,
 	std::string location);
+
+void displayEventsByTheme(const std::string& theme);
