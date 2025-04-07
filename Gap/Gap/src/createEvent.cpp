@@ -8,12 +8,7 @@ void CreateEvent::display() {
     std::cout << "| [B] Back\n";
     std::cout << "| [C] Create a new event\n";
 
-    key = _getch();
-    if (tolower(key) == 'c') {
-        inputEventInfo();
-        createEvent(eventName, date, endDate, description, credentials::username, leader, theme, casualties, participants, location);
-        display();
-    }
+   
 
 }
 
@@ -59,6 +54,11 @@ void CreateEvent::actionHandler(PageHandler& pages) {
             pages.createEventPageShouldDisplay = false;
             pages.dashboardPageShouldDisplay = true;;
             break;
+        }
+        if (tolower(key) == 'c') {
+            inputEventInfo();
+            createEvent(eventName, date, endDate, description, credentials::username, leader, theme, casualties, participants, location);
+            display();
         }
         else if (tolower(key) != '\n') {
             std::cout << "\n Invalid key. Try again: ";
