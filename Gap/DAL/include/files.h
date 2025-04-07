@@ -1,6 +1,7 @@
 #pragma once
 #include <string>
 #include "pch.h"
+#include "../../BLL/include/textFormat.h"
 #include "../../BLL/include/credentials.h"
 #include "../../Gap/include/dashboard.h"
 
@@ -26,4 +27,4 @@ void createEvent(std::string eventName,
 	std::vector<std::string> participants,
 	std::string location);
 
-void displayEventsByTheme(const std::string& theme);
+void displayEventsByField(const std::string& field, const std::string& value);

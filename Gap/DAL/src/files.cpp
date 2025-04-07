@@ -218,7 +218,7 @@ void createEvent(std::string eventName,
     }
 }
 
-void displayEventsByTheme(const std::string& theme) {
+void displayEventsByField(const std::string& field, const std::string& value) {
     ordered_json data = fetchEventsFromJSON("../../Gap/Data/events.json");
 
     if (data.empty()) {
@@ -228,32 +228,60 @@ void displayEventsByTheme(const std::string& theme) {
 
     bool found = false;
 
+    std::cout << std::setw(7) << "" << "+";
+    for (int i = 0; i < 97; i++) std::cout << "-";
+    std::cout << "+\n";
+
     for (auto& item : data.items()) {
         ordered_json event = item.value();
 
-        if (event.contains("theme") && event["theme"] == theme) {
+        if (!event.contains(field) || event[field].is_null()) continue;
+
+        std::string fieldValue = event[field].get<std::string>();
+
+        bool match = false;
+
+        // For date: allow partial match (e.g., year or year-month)
+        if (field == "date") {
+            if (fieldValue.find(value) == 0) {
+                match = true;
+            }
+        }
+        // For other fields: require exact match
+        else if (fieldValue == value) {
+            match = true;
+        }
+
+        if (match) {
             found = true;
-            std::cout << "\n" << event["eventName"].get<std::string>() << "\n";
-            std::cout << "Date: " << event["date"] << "\n";
-            if (event.contains("endDate") && !event["endDate"].is_null())
-                std::cout << "End Date: " << event["endDate"] << "\n";
-            std::cout << "Description: " << event["description"] << "\n";
-            std::cout << "Created By: " << event["createdBy"] << "\n";
-            std::cout << "Theme: " << event["theme"] << "\n";
-            if (event.contains("leader") && !event["leader"].is_null())
-                std::cout << "Leader: " << event["leader"] << "\n";
-            if (event.contains("casualties") && !event["casualties"].is_null())
-                std::cout << "Casualties: " << event["casualties"] << "\n";
-            std::cout << "Participants: ";
+            std::cout << "\n" << std::setw(10) << "" << event["eventName"].get<std::string>() << "\n";
+            std::cout << std::setw(10) << "" << "Date: " << event["date"] << "\n";
+            if (event.contains("endDate") && !event["endDate"].is_null()) {
+                std::cout << std::setw(10) << "" << "End Date: " << event["endDate"] << "\n";
+            }
+            std::cout << std::setw(10) << "" << "Description:" << wrapText(event["description"]) << "\n";
+            std::cout << std::setw(10) << "" << "Created By: " << event["createdBy"] << "\n";
+            std::cout << std::setw(10) << "" << "Theme: " << event["theme"] << "\n";
+            if (event.contains("leader") && !event["leader"].is_null()) {
+                std::cout << std::setw(10) << "" << "Leader: " << event["leader"] << "\n";
+            }
+            if (event.contains("casualties") && !event["casualties"].is_null()) {
+                std::cout << std::setw(10) << "" << "Casualties: " << event["casualties"] << "\n";
+            }
+
+            std::cout << std::setw(10) << "" << "Participants: ";
             for (const auto& p : event["participants"]) {
                 std::cout << p << " ";
             }
-            std::cout << "\nLocation: " << event["location"] << "\n";
-            std::cout << "-----------------------------\n";
+            std::cout << "\n" << std::setw(10) << "" << "Location: " << event["location"] << "\n\n";
+
+            std::cout << std::setw(7) << "" << "+";
+            for (int i = 0; i < 97; i++) std::cout << "-";
+            std::cout << "+\n";
         }
     }
 
     if (!found) {
-        std::cout << "No events found for the theme: " << theme << "\n";
+        std::cout << std::setw(7) << "" << "No events found for " << field << ": " << value << "\n";
     }
 }

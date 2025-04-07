@@ -25,8 +25,9 @@
             break;
          }
          else if (tolower(key) == 's') {
+			 pages.searchPageShouldDisplay = true;
+             pages.dashboardPageShouldDisplay = false;
              break;
-
          }
          else if (tolower(key) == 'l') {
              pages.libraryPageShouldDisplay = true;

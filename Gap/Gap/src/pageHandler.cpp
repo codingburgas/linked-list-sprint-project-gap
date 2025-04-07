@@ -9,6 +9,7 @@ PageHandler::PageHandler() {
     profilePageShouldDisplay = false;
     timelinePageShouldDisplay = false;
     createEventPageShouldDisplay = false;
+	searchPageShouldDisplay = false;
 }
 
 PageHandler pages;

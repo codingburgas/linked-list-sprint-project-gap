@@ -137,6 +137,7 @@
     <ClCompile Include="src\pageHandler.cpp" />
     <ClCompile Include="src\profile.cpp" />
     <ClCompile Include="src\register.cpp" />
+    <ClCompile Include="src\search.cpp" />
     <ClCompile Include="src\timeline.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -151,6 +152,7 @@
     <ClInclude Include="include\pch.h" />
     <ClInclude Include="include\profile.h" />
     <ClInclude Include="include\register.h" />
+    <ClInclude Include="include\search.h" />
     <ClInclude Include="include\timeline.h" />
   </ItemGroup>
   <ItemGroup>
