@@ -25,6 +25,6 @@ struct Node {
 
 Node* addNode(Node* head, const Event& e);
 Node* buildEventsList(const ordered_json& data);
-void printEvents(Node* head);
-void printCleanEvent(Node* head);
 Node* sortByDate(Node* head);
+
+void printCleanEvent(Node* head);

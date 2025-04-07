@@ -56,39 +56,6 @@ Node* buildEventsList(const ordered_json& eventData) {
     return head;
 }
 
-void printEvents(Node* head) {
-    if (!head) {
-        std::cout << "No events to display.\n";
-        return;
-    }
-
-    Node* current = head;
-
-    while (current) {
-        Event& e = current->data;
-
-        std::cout << "\n\n+";
-        for (int i = 0; i < 85; i++) std::cout << "-";
-        std::cout << "+\n\n";
-
-        std::cout << "Event: " << e.eventName;
-        std::cout << "\nDate: " << e.date;
-        if (!e.endDate.empty()) std::cout << "\nEnd Date: " << e.endDate;
-        std::cout << "\nDescription: " << wrapText(e.description);
-        if (!e.leader.empty()) std::cout << "\nLeader: " << e.leader;
-        if (!e.casualties.empty()) std::cout << "\nCasualties: " << e.casualties;
-        std::cout << "\nParticipants: " << e.participants;
-        std::cout << "\nLocation: " << e.location;
-        if(!e.createdBy.empty()) std::cout << "\nCreated By: " << e.createdBy;
-
-        current = current->next;
-    }
-
-    std::cout << "\n\n+";
-    for (int i = 0; i < 85; i++) std::cout << "-";
-    std::cout << "+";
-}
-
 // for timeline page
 void printCleanEvent(Node* head) {
     if (!head) {
@@ -108,7 +75,7 @@ void printCleanEvent(Node* head) {
         std::cout << std::setw(10) << "" << e.eventName << "\n";
         std::cout << std::setw(10) << "" << e.date << "\n";
         if (!e.endDate.empty()) std::cout << std::setw(10) << "" << "End Date: " << e.endDate << "\n";
-        std::cout << wrapText(e.description) << "\n";
+        std::cout << std::setw(10) << "" << wrapText(e.description) << "\n";
 
         current = current->next;
     }

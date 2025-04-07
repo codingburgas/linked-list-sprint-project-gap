@@ -12,7 +12,6 @@ void Timeline::display() {
 
     printCleanEvent(eventList);
 
-
     std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
     
 }

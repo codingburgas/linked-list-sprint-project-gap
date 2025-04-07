@@ -34,8 +34,8 @@ void Library::actionHandler(PageHandler& pages) {
             break;
         }
         else if (key == '4') {
-            break;
             displayTheme("Terrorism");
+            break;
         }
         else if (tolower(key) != '\n') {
             std::cout << "\n Invalid key. Try again: ";
@@ -58,8 +58,9 @@ void Library::displayTheme(std::string theme) {
         << std::string(rightPadding, ' ')
         << "|\n";
     std::cout << "+----------------------------+\n";
+    std::cout << "| [B] Back\n";
 
-    displayEventsByTheme(theme);
+    displayEventsByField("theme", theme);
     while (true) {
         key = _getch();
 

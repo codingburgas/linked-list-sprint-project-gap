@@ -12,4 +12,5 @@ public:
     bool timelinePageShouldDisplay;
     bool libraryPageShouldDisplay;
     bool createEventPageShouldDisplay;
+	bool searchPageShouldDisplay;
 };

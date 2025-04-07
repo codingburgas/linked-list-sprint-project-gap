@@ -9,6 +9,7 @@
 #include "timeline.h"
 #include "library.h"
 #include "createEvent.h"
+#include "search.h"
 
 class App {
 public:
@@ -24,6 +25,7 @@ private:
 	Timeline timeline;
 	Library library;
 	CreateEvent createEvent;
+	Search search;
 	PageHandler pages;
 
 	bool running = true;

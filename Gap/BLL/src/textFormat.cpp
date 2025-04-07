@@ -9,8 +9,6 @@ std::string wrapText(const std::string& text) {
 
     std::string indent = std::string(10, ' '); 
 
-    wrapped << indent; 
-
     while (words >> word) {
         if (lineLength + word.length() + 1 > limitWidth) {
             wrapped << "\n" << indent; 

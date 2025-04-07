@@ -37,9 +37,14 @@ void App::pageHandler() {
 	if (pages.libraryPageShouldDisplay) {
 		library.display();
 		library.actionHandler(pages);
+	}
 	if (pages.createEventPageShouldDisplay) {
 		createEvent.display();
 		createEvent.actionHandler(pages);
+	}
+	if (pages.searchPageShouldDisplay) {
+		search.display();
+		search.actionHandler(pages);
 	}
 	if (pages.exitApp) {
 		running = false;
