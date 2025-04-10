@@ -9,7 +9,7 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "BLL", "BLL\BLL.vcxproj", "{
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "DAL", "DAL\DAL.vcxproj", "{73CE597C-0A91-4CEE-BB79-CC68B788B8AC}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "qaTesting", "qaTesting\qaTesting.vcxproj", "{C79B0A0A-48B7-2C9E-28B7-53E8AE25B25C}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "QATesting", "QATesting\QATesting.vcxproj", "{C79B0A0A-48B7-2C9E-28B7-53E8AE25B25C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
