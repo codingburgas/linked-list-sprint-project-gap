@@ -9,6 +9,6 @@ public:
 	void display();
 	void actionHandler(PageHandler& pages);
 private:
-	void displayTheme(std::string theme);
+		void displayTheme(std::string theme);
 	char key;
 };
