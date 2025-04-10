@@ -1,7 +1,7 @@
 <h1 align="center">🗺 Gap 🗺</h1>
-
----
-
+<p align="center" >
+<a"><img width=300px src="https://github.com/codingburgas/linked-list-sprint-project-gap/blob/main/Gap/Documents/logo.png" alt=""/></a>
+</p>
 <h3 align="center">
     <b>Historical app for history amateurs!</b>
 
@@ -55,9 +55,11 @@ git clone https://github.com/codingburgas/linked-list-sprint-project-gap.git
 ```
 ### Open the solution and build it. That’s it — now you’re exploring history in style!
 # 📂 Project Documents
-[📄 Documentation]()
+[📄 Documentation](https://codingburgas-my.sharepoint.com/:w:/g/personal/pkhristova22_codingburgas_bg/ERAYO_7yUcpFrODDnN5XCswBELCjn-da6MQa1g7fPe__zA?e=ej0P2k)
 
-[✏ Presentation]()
+[📊 QA Documentation](https://codingburgas-my.sharepoint.com/:x:/g/personal/pkhristova22_codingburgas_bg/ERJXs9UrvGFHnc7CUnqG7FwB4xt1L754BXzqr1nsvHT4Kw?e=bxhh0k)
+
+[✏ Presentation](https://codingburgas-my.sharepoint.com/:p:/g/personal/pkhristova22_codingburgas_bg/ERm_SY5kqcJFrUGO0Jpcf2oB6pQ5NSk5sN6P4ULjzxK4oA?e=RXNbIj)
 
 
 ## 👥 Team
